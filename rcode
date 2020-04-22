@@ -1,0 +1,12 @@
+
+pdtsud$level_type_n <- as.numeric(factor(pdtsud$level_type))
+
+model <- lm(attempts_range ~ level_type_n, data = user_1_df)
+with(user_1_df, plot(level_type_n, attempts_range))
+abline(model)
+
+library(stringr)
+sample_submission_ordered$user_ID <- str_extract_all(sample_submission_ordered$ID, "^[^_]*_[^_]", simplify = TRUE)
+sample_submission_ordered$problem_ID <- str_extract_all(sample_submission_ordered$ID, "([^_]*_[^_]*)$", simplify = TRUE)
+
+table(user_1_df$attempts_range)
