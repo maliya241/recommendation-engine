@@ -304,7 +304,6 @@ udtr$numeric_level_type <- as.numeric(udtr$level_type)-1 #maps each letter to a 
 udtr$numeric_rank <- ifelse(udtr$rank == "beginner", 1, ifelse(udtr$rank == "intermediate", 2, ifelse(udtr$rank == "advanced", 3, ifelse(udtr$rank == "expert", 4, 0)))) #maps each rank to a number (beginner - 1, intermediate - 2, advanced - 3, expert - 4)
 
 #Seeing how the different variables interact with each other
-library(ggplot2)
 ggplot(data=udtr) + geom_point(mapping=aes(x=numeric_level_type, y=points.imp.mean))
 ggplot(data=udtr) + geom_point(mapping=aes(x=rank, y=points.imp.mean))
 ggplot(data=udtr) + geom_point(mapping=aes(x=rank, y=numeric_level_type))
