@@ -10,12 +10,15 @@ library(stringr) #For String Manipulation
 library(randomForest) #For Random Forest
 library(caret) #For Cross Validation and Creating Confusion Matrix
 library(doSNOW) #For Cross Validation
+library(rpart) #For Cross Validation 
+library(rpart.plot) #For Cross Validation
 library(neighbr) #For K-Nearest Neighbors
 library(e1071) #For Creating Confusion Matrix
 
 ###########################################################################################################################
 # Data Setup
 ###########################################################################################################################
+
 #Load raw data
 problem_data <- read.csv("problem_data.csv", header = TRUE)
 train_submissions <- read.csv("train_submissions.csv", header = TRUE)
@@ -263,10 +266,6 @@ stopCluster(cl)
 
 #check out results
 rf.5.cv.3
-
-#Install and load packages
-library(rpart)
-library(rpart.plot)
 
 rpart.cv <- function(seed, training, labels, ctrl) {
   cl <- makeCluster(6, type = "SOCK")
