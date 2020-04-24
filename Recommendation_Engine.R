@@ -83,6 +83,11 @@ dc[duplicated(dc) | duplicated(dc, fromLast=TRUE), ]
 
 #We have all unique rows! Therefore, all the data is unique. We can proceed.
 
+ggplot(udtr, aes(x = rank, fill = factor(attempts_range))) + 
+  stat_count(width = 0.5, color="black") + 
+  xlab("rank") + 
+  ylab("Total Count") + 
+  labs(fill = "attempts_range")
 #There is some predictive power in the user's rank (beginner, intermediate, advanced, expert)?
 
 #Is there any correlation with other variables?
