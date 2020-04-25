@@ -1,4 +1,4 @@
-#Setup from Recommendation_Engine.R
+#Setup from Random_Forest.R
 problem_data <- read.csv("problem_data.csv", header = TRUE)
 train_submissions <- read.csv("train_submissions.csv", header = TRUE)
 user_data <- read.csv("user_data.csv", header = TRUE)
