@@ -88,7 +88,7 @@ ggplot(udtr, aes(x = rank, fill = factor(attempts_range))) +
   xlab("rank") + 
   ylab("Total Count") + 
   labs(fill = "attempts_range")
-#There is some predictive power in the user's rank (beginner, intermediate, advanced, expert)?
+#There is some predictive power in the user's rank (beginner, intermediate, advanced, expert)
 
 #Is there any correlation with other variables?
 tags <- dc[which(str_detect(dc$tags, "brute force")),]
@@ -104,7 +104,7 @@ tags3[1:5,]
 #Note: "brute force" and "binary search" problems tend to be done by "advanced" users
 #Some "two pointers" problems are done by intermediate-level users
 #Note lines 24 and 48; two problems classified level C have different point values
-#Note line 14 where level_type is E and points are 2500, but the problem has fewer tags and the one belopw it
+#Note line 14 where level_type is E and points are 2500, but the problem has fewer tags and the one below it
 #Conclusion: the number of tags and the tags themselves probably can't be used to make reliable predictions
 #but level_type, points, and rank might be correlated
 #Also, points cannot be used to fill in NA values for level-type and vice versa
